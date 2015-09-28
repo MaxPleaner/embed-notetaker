@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+// $(document).on('page:load', function() {
+$(function(){
+
+	var $togglingButtons = $(".toggling-button")
+	$togglingButtons.on("click", function(e){
+		var $button = $(e.currentTarget)
+		var target = $button.attr("target")
+		var $content = $("#" + String(target))
+		$content.toggleClass("hidden")
+	})
+	$togglingButtons.each(function(index, button){
+		$(button).trigger("click")
+	})
+})

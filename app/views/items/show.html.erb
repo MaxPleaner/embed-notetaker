@@ -7,7 +7,7 @@
 
 <p>
   <strong>Content:</strong>
-  <%= @item.content %>
+  <%= raw(@item.cached_content) %>
 </p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |

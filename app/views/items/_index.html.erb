@@ -1,0 +1,9 @@
+<table>
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><a href="<%= item_url(item) %>"><%= item.name %></a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
