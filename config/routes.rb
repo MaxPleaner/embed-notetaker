@@ -1,12 +1,5 @@
 Rails.application.routes.draw do
-  get 'events/funcheap'
-
-  get 'events/meetup'
-
-  get 'events/list'
-
-  get 'events/indybay'
-
+  # get "/event/:key" => "events#show", as: :event
   resources :items
   root "pages#index"
   # get 'pages/index'

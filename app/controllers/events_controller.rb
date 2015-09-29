@@ -1,13 +1,6 @@
 class EventsController < ApplicationController
-  def funcheap
-  end
-
-  def meetup
-  end
-
-  def list
-  end
-
-  def indybay
-  end
+ #  def show
+ #  	@events = Event.source(params[:key]).events
+	# end
 end
+

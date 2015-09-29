@@ -1,4 +1,3 @@
-require 'open-uri' 
 class Embed
 	def self.get(url)
 		Page.new(open(url).read)

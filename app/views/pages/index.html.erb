@@ -1,29 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-<button class="toggling" target="events">
-	Event Listings
-</button>
-<section id="events">
-	<% Events.sources.each do |source_name, url| %>
-		<a href="#{url}"><%= source_name %></a> <br>
-	<% end %>
-</section>
+<%#= render "events" %>
 
-<button class="toggling" target="items">
-	Notes
-</button>
-<section id="items">
-	<button class="toggling" target="new-item">New Note</button> <br> <br>
-	<section id="new-item">
-		<div>
-			<%= render "items/form" %>
-		</div>
-	</section>
-	<br><hr><br><br>
-	<section>
-		<b>Notes</b> <br> <br>
-		<div>
-			<%= render "items/index" %>
-		</div>
-	</section>
-</section>
+<%= render "items" %>

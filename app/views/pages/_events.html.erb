@@ -1,0 +1,8 @@
+<button class="toggling" target="events">
+	Event Listings
+</button>
+<section id="events">
+	<% Event.sources.each do |source| %>
+		<a href="/event/<%= source[:key] %>"><%= source[:name] %></a> <br>
+	<% end %>
+</section>
