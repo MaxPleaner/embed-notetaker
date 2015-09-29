@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
+
+<button class="togglins" target="events">
+	Event Listings
+</button>
+<section id="events">
+	<% Events.sources.each do |source_name, url| %>
+		<a href="#{url}">#{source_name}</a>
+	<% end %>
+</section>
+
 <button class="toggling" target="items">
 	Notes
 </button> <br> <br>
