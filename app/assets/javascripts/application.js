@@ -11,19 +11,23 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
 // $(document).on('page:load', function() {
 $(function(){
-
-	var $togglingButtons = $(".toggling-button")
+	var $togglingButtons = $("button.toggling")
 	$togglingButtons.on("click", function(e){
+		// debugger
 		var $button = $(e.currentTarget)
 		var target = $button.attr("target")
 		var $content = $("#" + String(target))
 		$content.toggleClass("hidden")
+		if ($content.hasClass("hidden")) {
+			$button.text($button.text().replace(" (close)", ""))
+		} else { $button.text($button.text() + " (close)") }
 	})
 	$togglingButtons.each(function(index, button){
 		$(button).trigger("click")

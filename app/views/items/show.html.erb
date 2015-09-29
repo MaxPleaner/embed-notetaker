@@ -10,5 +10,6 @@
   <%= raw(@item.cached_content) %>
 </p>
 
+<a href="<%= item_url(@item) %>" data-confirm="Are you sure?" data-method="delete">Destroy</a>
 <%= link_to 'Edit', edit_item_path(@item) %> |
 <%= link_to 'Back', items_path %>

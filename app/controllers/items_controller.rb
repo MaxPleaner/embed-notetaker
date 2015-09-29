@@ -5,7 +5,8 @@ class ItemsController < ApplicationController
   # GET /items.json
   def index
     @items = Item.all
-    render partial: "items/index", locales: {items: @items}
+    redirect_to "/"
+    # render partial: "items/index", locales: {items: @items}
   end
 
   # GET /items/1
@@ -29,7 +30,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to :back, notice: 'Item was successfully created.' }
+        format.html { redirect_to "/", notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
         format.html { render :new }
@@ -44,7 +45,7 @@ class ItemsController < ApplicationController
     respond_to do |format|
       if @item.update(item_params)
         @item.update_cache
-        format.html { redirect_to :back, notice: 'Item was successfully updated.' }
+        format.html { redirect_to "/", notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -58,7 +59,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to "/", notice: 'Item was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

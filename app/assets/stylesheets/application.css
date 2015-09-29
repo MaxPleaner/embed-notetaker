@@ -19,10 +19,16 @@
 	height: 300px;
 }
 
+* {
+	z-index: 0;
+}
+
 .hidden {
-	display: false;
+	display: none;
 	opacity: 0;
 	height: 0;
+	visibility: hidden;
 	width: 0;
 	color: green;
+	z-index: -1;
 }
