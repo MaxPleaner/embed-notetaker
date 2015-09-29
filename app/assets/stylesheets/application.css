@@ -33,7 +33,13 @@
 	z-index: -1;
 }
 
-#items {
+#items, #events {
 	border: 1px solid black;
 	padding: 15px;
+	margin: 15px;
+}
+
+button.toggling {
+	display: block;
+	margin: 20px;
 }

@@ -1,17 +1,17 @@
 <p id="notice"><%= notice %></p>
 
-<button class="togglins" target="events">
+<button class="toggling" target="events">
 	Event Listings
 </button>
 <section id="events">
 	<% Events.sources.each do |source_name, url| %>
-		<a href="#{url}">#{source_name}</a>
+		<a href="#{url}"><%= source_name %></a> <br>
 	<% end %>
 </section>
 
 <button class="toggling" target="items">
 	Notes
-</button> <br> <br>
+</button>
 <section id="items">
 	<button class="toggling" target="new-item">New Note</button> <br> <br>
 	<section id="new-item">
