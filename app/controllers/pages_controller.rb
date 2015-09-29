@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def index
-  	@items = Item.all
-  	@item = Item.new
+  	@notes = Note.all
+  	@note = Note.new
   end
 end

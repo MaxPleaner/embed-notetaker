@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20150928223826) do
 
-  create_table "items", force: :cascade do |t|
+  create_table "notes", force: :cascade do |t|
     t.string   "name"
     t.text     "content"
     t.datetime "created_at",     null: false

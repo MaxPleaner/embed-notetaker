@@ -1,4 +1,4 @@
-class Item < ActiveRecord::Base
+class Note < ActiveRecord::Base
 	def update_cache
 		update(cached_content: nil)
 		cached_content

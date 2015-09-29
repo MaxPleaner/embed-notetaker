@@ -33,7 +33,7 @@
 	z-index: -1;
 }
 
-#items, #events {
+#notes, #events {
 	border: 1px solid black;
 	padding: 15px;
 	margin: 15px;

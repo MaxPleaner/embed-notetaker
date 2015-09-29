@@ -1,0 +1,18 @@
+<button class="toggling" target="notes">
+	Notes
+</button>
+<section id="notes">
+	<button class="toggling" target="new-note">New Note</button> <br> <br>
+	<section id="new-note">
+		<div>
+			<%= render "notes/form" %>
+		</div>
+	</section>
+	<br><hr><br><br>
+	<section>
+		<b>Notes</b> <br> <br>
+		<div>
+			<%= render "notes/index" %>
+		</div>
+	</section>
+</section>

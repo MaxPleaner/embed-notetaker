@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # get "/event/:key" => "events#show", as: :event
-  resources :items
+  resources :notes
   root "pages#index"
   # get 'pages/index'
 

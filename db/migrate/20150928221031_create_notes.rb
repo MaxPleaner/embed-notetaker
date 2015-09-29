@@ -1,6 +1,6 @@
-class CreateItems < ActiveRecord::Migration
+class CreateNotes < ActiveRecord::Migration
   def change
-    create_table :items do |t|
+    create_table :notes do |t|
       t.string :name
       t.text :content
 

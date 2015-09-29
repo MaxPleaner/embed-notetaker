@@ -1,0 +1,9 @@
+<table>
+  <tbody>
+    <% @notes.each do |note| %>
+      <tr>
+        <td><a href="<%= note_url(note) %>"><%= note.name %></a></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
