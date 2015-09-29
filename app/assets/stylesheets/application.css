@@ -43,3 +43,8 @@ button.toggling {
 	display: block;
 	margin: 20px;
 }
+
+.content {
+	border: 1px solid grey;
+	padding: 20px;
+}
