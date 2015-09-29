@@ -1,18 +1,19 @@
 <p id="notice"><%= notice %></p>
-
-<button class="toggling" target="new-item">New Item</button> <br> <br>
-<section id="new-item">
-	<div>
-		<%= render "items/form" %>
-	</div>
+<button class="toggling" target="items">
+	Notes
+</button> <br> <br>
+<section id="items">
+	<button class="toggling" target="new-item">New Note</button> <br> <br>
+	<section id="new-item">
+		<div>
+			<%= render "items/form" %>
+		</div>
+	</section>
+	<br><hr><br><br>
+	<section>
+		<b>Notes</b> <br> <br>
+		<div>
+			<%= render "items/index" %>
+		</div>
+	</section>
 </section>
-
-<br><hr><br><br>
-
-<section>
-	<b>Items</b> <br> <br>
-	<div>
-		<%= render "items/index" %>
-	</div>
-</section>
-

@@ -1,0 +1,7 @@
+From: "Random" <symbolic.contrast@gmail.com>
+To: "Random" <maxpleaner@gmail.com>
+Subject: This is a test 1
+
+Hi John,
+I'm sending this mail with curl thru my gmail account.
+Bye!
