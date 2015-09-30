@@ -20,7 +20,6 @@
 $(function(){
 	var $togglingButtons = $("button.toggling")
 	$togglingButtons.on("click", function(e){
-		// debugger
 		var $button = $(e.currentTarget)
 		var target = $button.attr("target")
 		var $content = $("#" + String(target))
@@ -33,3 +32,4 @@ $(function(){
 		$(button).trigger("click")
 	})
 })
+

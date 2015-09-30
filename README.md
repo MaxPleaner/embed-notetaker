@@ -1,16 +1,22 @@
-A Rails app for taking notes.
+## blogger-rails
 
-It allows embedding html content.
+A Rails app; begin it by running `bundle`, `rake db:create db:migrate` (uses postgres), and `rails server`. Go to `localhost:3000`.
+
+There are a couple components to the app
+- Note taking (including embedding content from the web)
+- Event listings
+
+I'm not deploying this app because the html embedding makes it insecure. 
+
+### Note Taking
 
 Usage:
 
 - "Notes" are objects with "title" and "content" attributes
 - "content" can include ERB
 - `<%= Embed.get(url).parse(css: ".css.selector", title: "Embedded Content") %>` will create a toggling section with parsed content from the url.
-- run `rake update_cache` to re-compile "content" templates
-
-- to access the Notes CRUD interace, `bundle`, `rails server`, then go to http://localhost:3000
-
-Notes:  
+- run `rake update_cache` to re-compile "content" templates  
 - The "title" value of parse()'s options hash can't include quote marks. It needs to be a valid CSS selector when the spaces are replaced with dashes. 
-- I'm not deploying this app because the html embedding makes it insecure. 
+
+
+

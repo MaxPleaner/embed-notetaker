@@ -2,7 +2,10 @@
 	Event Listings
 </button>
 <section id="events">
+	<!-- <a class="loading-alert" href="/events/all">All</a> <br> -->
 	<% Event.sources.each do |source| %>
-		<a href="/events/<%= source[:key] %>"><%= source[:name] %></a> <br>
+		<a class="loading-alert" href="/events/<%= source[:key] %>">
+			<%= source[:name] %>
+		</a> <br>
 	<% end %>
 </section>

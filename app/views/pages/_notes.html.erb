@@ -2,13 +2,22 @@
 	Notes
 </button>
 <section id="notes">
-	<button class="toggling" target="new-note">New Note</button> <br> <br>
+	<button class="toggling" target="help">Help</button>
+	<pre id="help">
+- "Notes" are objects with "title" and "content" attributes
+- "content" can include ERB
+- The embed helper can be called from ERB.
+- `Embed.toggler(content: "some string", title: "header")` will create a toggling section with the content and title.
+- `Embed.get(url).parse(css: ".css.selector", title: "Embedded Content") %>` will create a toggling section with parsed content from the url.
+- run `rake update_cache` to re-compile "content" templates  
+- The "title" value of parse()'s options hash can't include quote marks. It needs to be a valid CSS selector when the spaces are replaced with dashes. 
+	</pre>
+	<button class="toggling" target="new-note">New Note</button>
 	<section id="new-note">
 		<div>
 			<%= render "notes/form" %>
 		</div>
-	</section>
-	<br><hr><br><br>
+	</section><hr> <br>
 	<section>
 		<b>Notes</b> <br> <br>
 		<div>

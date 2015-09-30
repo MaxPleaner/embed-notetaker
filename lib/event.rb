@@ -4,7 +4,7 @@ class Event
 			{ name: "Funcheap SF", key: "funcheap" },
 			{ name: "Meetup", key: "meetup" },
 			{ name: "SF List", key: "list" },
-			{ name: "Indybay", key: "indybay" }
+			# { name: "Indybay", key: "indybay" }
 		]
 	end
 	def self.source(source_key)

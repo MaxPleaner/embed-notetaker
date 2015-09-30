@@ -44,10 +44,15 @@ button.toggling {
 	margin: 20px;
 }
 
+
+#events .content {
+	width: 66%;
+}
+
+
 .content {
 	border: 1px solid grey;
 	padding: 20px;
-	width: 66%;
 	margin: 40px auto;
 }
 
