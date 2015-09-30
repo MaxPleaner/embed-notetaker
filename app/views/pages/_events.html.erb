@@ -3,6 +3,6 @@
 </button>
 <section id="events">
 	<% Event.sources.each do |source| %>
-		<a href="/event/<%= source[:key] %>"><%= source[:name] %></a> <br>
+		<a href="/events/<%= source[:key] %>"><%= source[:name] %></a> <br>
 	<% end %>
 </section>
