@@ -45,3 +45,4 @@ end
 
 gem "nokogiri"
 gem "jquery-turbolinks"
+gem "meetup_client"

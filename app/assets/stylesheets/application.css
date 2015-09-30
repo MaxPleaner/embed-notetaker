@@ -47,4 +47,10 @@ button.toggling {
 .content {
 	border: 1px solid grey;
 	padding: 20px;
+	width: 66%;
+	margin: 40px auto;
+}
+
+pre {
+	white-space: pre-wrap;
 }
