@@ -6,8 +6,6 @@ There are a couple components to the app
 - Note taking (including embedding content from the web)
 - Event listings
 
-I'm not deploying this app because the html embedding makes it insecure. 
-
 ### Note Taking
 
 Usage:
@@ -18,5 +16,8 @@ Usage:
 - run `rake update_cache` to re-compile "content" templates  
 - The "title" value of parse()'s options hash can't include quote marks. It needs to be a valid CSS selector when the spaces are replaced with dashes. 
 
+### Events
 
+- Click on the links to event sources and see  
+  upcoming events, separated by day. 
 
