@@ -1,7 +1,7 @@
 class Indybay
 	attr_reader :xml_doc
 	def initialize
-		url = "http://www.indybay.org/syn/generate_rss.php?include_posts=0&include_attachments=0&include_events=0&include_events=1&page_id=36"
+		url = "http://www.indybay.org/syn/generate_rss.php?include_posts=1&include_attachments=0&include_events=1"
 		@xml_doc = Nokogiri.parse(open(url))
 	end
 	def events(params={})
@@ -19,8 +19,7 @@ class Indybay
 			creator = item.try(:css, "creator")
 			creator = creator.to_a.empty? ? nil : creator.try(:first).try(:text)
 			
-			link = item.try(:css, "link")
-			link = link.to_a.empty? ? nil : link.try(:first).try(:text)
+			link = nil #item.try(:css, "link").try(:first).try(:text)
 			
 			desc = item.try(:css, "description")
 			desc = desc.to_a.empty? ? nil : desc.try(:first).try(:text)
@@ -42,6 +41,6 @@ class Indybay
 					name: date,
 					content: content.join("<hr>").html_safe
 				}; arr
-			end
+			end.reverse
 	end
 end
