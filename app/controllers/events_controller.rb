@@ -1,13 +1,14 @@
 class EventsController < ApplicationController
   def show
-  	if params[:key] == "all"
+    options = params
+  	if options[:key] == "all"
   		@events = Event.sources.map { |s| s[:key] }.map do |key|
   			Event.source(key).events({})
   		end.flatten
   	else
 	    @events = Event
-	    	.source(params.delete(:key))
-	    	.events(params)
+	    	.source(options.delete(:key))
+	    	.events(options)
 	  end
 	end
 end
