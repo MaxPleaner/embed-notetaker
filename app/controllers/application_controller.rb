@@ -9,5 +9,4 @@ class ApplicationController < ActionController::Base
   	[:controller, :action].each { |key| result.delete(key) }
   	result
   end
-  
 end

@@ -15,7 +15,7 @@ class Meetup
       time: "0,5d"
     }
 	end
-	def events(params)
+	def events(params={})
 		listings = client.open_events(@defaults.merge(params))['results']
 		results = listings.reduce({}) do |results, listing|
 			time = Time
