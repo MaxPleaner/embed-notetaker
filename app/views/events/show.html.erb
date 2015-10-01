@@ -1,3 +1,8 @@
 <% @events.each do |e| %>
 	<%= Embed.toggler(content: e[:content], title: e[:name]) %>
 <% end %>
+
+
+<hr>
+
+<a href="<%= root_url %>">Back</a>
