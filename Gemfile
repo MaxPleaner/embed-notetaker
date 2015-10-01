@@ -47,3 +47,4 @@ gem "nokogiri"
 gem "jquery-turbolinks"
 gem "meetup_client"
 gem 'rails_12factor', group: :production
+gem 'thin-rails'

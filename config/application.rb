@@ -10,8 +10,15 @@ Bundler.require(*Rails.groups)
 
 module BloggerRails
   class Application < Rails::Application
-    
+
+    # Custom
+    config.force_ssl = true
     config.autoload_paths << Rails.root.join('lib')
+
+
+    # Default
+    config.active_record.raise_in_transactional_callbacks = true
+        # Do not swallow errors in after_commit/after_rollback callbacks.
     
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -25,7 +32,5 @@ module BloggerRails
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
 
-    # Do not swallow errors in after_commit/after_rollback callbacks.
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end
