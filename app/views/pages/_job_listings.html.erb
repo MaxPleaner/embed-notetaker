@@ -1,0 +1,11 @@
+<button class="toggling" target="job-listings">Job Listings</button>
+<section id="job-listings" class="content">
+	<% JobListings.sources.each do |source| %>
+		<form action="<%= job_listings_url(source) %>" method="GET">
+			<input type="number" name="start" placeholder="start (default to 0)" style="min-width: 50px">
+			<button type="submit">
+				<%= source.split("_").map(&:capitalize).join(" ") %>
+			</button>
+		</form> <br>
+	<% end %>
+</section>

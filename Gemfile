@@ -48,3 +48,10 @@ gem "jquery-turbolinks"
 gem "meetup_client"
 gem 'rails_12factor', group: :production
 gem 'thin-rails'
+
+# Job_tracker_cli dependencies
+	gem "indeed-ruby"
+	gem "byebug"
+	gem "awesome_print"
+	gem "mechanize"
+	gem "nokogiri"

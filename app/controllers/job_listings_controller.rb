@@ -2,7 +2,6 @@ class JobListingsController < ApplicationController
   def show
   	@key = params[:key]
   	@start = params[:start]
-  	binding.pry
-  	@listings = `#{@key} #{@start}`
+  	@listings = JobListings.send(@key.to_sym, @start.to_i)
   end
 end

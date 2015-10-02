@@ -13,11 +13,18 @@
 //= require jquery
 //= require jquery.turbolinks
 //= require jquery_ujs
+//= require ansi_up
 //= require turbolinks
 //= require_tree .
 
-// $(document).on('page:load', function() {
 $(function(){
+	// Ansi Up
+	var $body = $("body")
+	var text = $body.html()
+	var coloredText = ansi_up.ansi_to_html(text)
+	$body.html(coloredText)
+
+	// Toggling Buttons
 	var $togglingButtons = $("button.toggling")
 	$togglingButtons.on("click", function(e){
 		var $button = $(e.currentTarget)

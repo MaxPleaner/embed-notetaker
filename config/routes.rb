@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get "/events/:key" => "events#show", as: :event
   resources :notes
   root "pages#index"
-  get "/job_listings/:key/:start" => "job_listings#show", as: :job_listings
+  get "/job_listings/:key" => "job_listings#show", as: :job_listings
   # get 'pages/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
