@@ -1,17 +1,33 @@
 task :server do
-	require 'pty'
-  cmd = "thin start --ssl  --ssl-key-file server.key --ssl-cert-file server.crt"
-	begin
-	  PTY.spawn( cmd ) do |stdout, stdin, pid|
-	    begin
-	      stdout.each { |line| print line }
-	    rescue Errno::EIO
-	      puts "Errno:EIO error, but this probably just means " +
-	            "that the process has finished giving output"
+	require "readline"
+	require 'open3'
+
+	Open3.popen3("thin start --ssl  --ssl-key-file server.key --ssl-cert-file server.crt") do |i, o, e, th|
+	  Thread.new {
+	    while !i.closed? do
+	      input =Readline.readline("", true).strip 
+	      i.puts input
 	    end
-	  end
-	rescue PTY::ChildExited
-	  puts "The child process exited!"
+	  }
+
+	  t_err = Thread.new {
+	    while !e.eof?  do
+	      putc e.readchar
+	    end
+	  }
+
+	  t_out = Thread.new {
+	    while !o.eof?  do
+	      putc o.readchar
+	    end
+	  }
+
+	  Process::waitpid(th.pid) rescue nil 
+	  # "rescue nil" is there in case process already ended.
+
+	  t_err.join
+	  t_out.join
+
 	end
 end
 
