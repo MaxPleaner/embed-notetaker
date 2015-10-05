@@ -8,7 +8,11 @@ class Note < ActiveRecord::Base
 		if cached_text
 			cached_text
 		else
-			cached_text = ERB.new(content).result
+			begin
+				cached_text = ERB.new(content).result
+			rescue SyntaxError => e
+				cached_text = "There was an error with the Note's ERB.  <a href='/notes/#{id}/edit'>Edit the note</a>"
+			end
 			update(cached_content: cached_text)
 		end
 		cached_text
