@@ -34,7 +34,7 @@ class Meetup
 					"#{entry[attr]}"
 					}.join("\n\n")
 					Embed.toggler(
-						title: "#{entry['time']} - #{entry['group']['who']}",
+						title: "#{entry['time']} - #{entry['name']} - #{entry['group']['who']}",
 						content: text
 					)
 				}.join("\n\n\n\n")
